@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template2.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="content">
+		<div id="mainContainer">
+
+			<table width="100%" height="100%">
+				<h2>PrimeFaces Linear Chart Example</h2>
+
+				<p:panel header="#{borsaBean.prueba}" id="panelPrueba">
+					Sisaad:
+					<p:inputTextarea rows="6" cols="33" value="#{documentosBean.sDocsSisaad}" />
+					
+					Disdep:
+					<p:inputTextarea rows="6" cols="33" value="#{documentosBean.sDocsDisdep}" />
+					
+					<p:commandButton action="#{documentosBean.cuentaDocumentos}" value="calcular" update="panelPrueba"/>
+					<p:commandButton action="#{documentosBean.cuentaReset}" value="reset" update="panelPrueba"/>
+					
+<br/>
+					Sisaad: <h:outputText value="#{documentosBean.documentosModel.numDocsSisaad}" /><br/>
+					Disdep: <h:outputText value="#{documentosBean.documentosModel.numDocsDisdep}" /><br/>
+					Coincidentes: <h:outputText value="#{documentosBean.documentosModel.numDocsCoincidentes}" /><br/>
+					DifSisaad: <h:outputText value="#{documentosBean.documentosModel.numDocsDifSisaad}" /><br/>
+					DifDisdep: <h:outputText value="#{documentosBean.documentosModel.numDocsDifDisdep}" /><br/>
+
+					
+				</p:panel>
+
+			</table>
+		</div>
+	</ui:define>
+
+</ui:composition>
