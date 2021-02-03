@@ -15,6 +15,9 @@ public class DocumentosServiceImpl implements IDocumentosService {
 		
 		DocumentosModel documentosModel = new DocumentosModel();
 		
+		docsSisaad.replaceAll(String::trim);
+		docsDisdep.replaceAll(String::trim);
+		
 		documentosModel.setDocsSisaad(docsSisaad);
 		documentosModel.setDocsDisdep(docsDisdep);
 		
