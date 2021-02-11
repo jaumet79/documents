@@ -11,6 +11,8 @@
 	<ui:define name="content">
 		<div id="mainContainer">
 			<p:panel id="panelPrueba" >
+			 <h:form id="mainForm">
+			
 				<p:panelGrid columns="2" >
 					<h:outputText value="Sisaad:" />
 					<h:outputText value="Disdep:" />
@@ -23,7 +25,7 @@
 					<p:commandButton action="#{documentosBean.cuentaDocumentos}" value="calcular" update="panelPrueba"/>
 					<p:commandButton action="#{documentosBean.cuentaReset}" value="reset" update="panelPrueba"/>
 				</p:panelGrid>
-				
+				</h:form>
 				<p:panelGrid columns="2">
 					<h:outputText value="Sisaad:" /> 
 					<h:outputText value="#{documentosBean.documentosModel.numDocsSisaad}" />
@@ -41,6 +43,16 @@
 					<h:outputText value="#{documentosBean.documentosModel.numDocsDifDisdep}" />
 					
 				</p:panelGrid>
+					
+				<p:panelGrid columns="3">
+					<h:outputText value="Coincidentes:" />
+					<h:outputText value="DifSisaad:" />
+					<h:outputText value="DifDisdep:" />
+					<p:inputTextarea rows="15" cols="30" value="#{documentosBean.documentosModel.docsCoincidentsString}" autoResize="false" />
+					<p:inputTextarea rows="15" cols="30" value="#{documentosBean.documentosModel.docsDifSisaadString}" autoResize="false" />
+					<p:inputTextarea rows="15" cols="30" value="#{documentosBean.documentosModel.docsDifDisdepString}" autoResize="false" />
+				</p:panelGrid>
+				
 			</p:panel>
 		</div>
 	</ui:define>
